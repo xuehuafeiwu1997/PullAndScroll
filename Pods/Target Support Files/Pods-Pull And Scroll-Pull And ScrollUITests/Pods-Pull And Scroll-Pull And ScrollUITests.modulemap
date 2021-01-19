@@ -1,0 +1,6 @@
+module Pods_Pull_And_Scroll_Pull_And_ScrollUITests {
+  umbrella header "Pods-Pull And Scroll-Pull And ScrollUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
