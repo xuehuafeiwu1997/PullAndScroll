@@ -16,6 +16,7 @@
 @property (nonatomic, assign) CGFloat minViewHeight;
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) CGPoint scrollBeginDraggingOffset;
 
 @end
 
@@ -34,21 +35,7 @@
     self.maxViewHeight = 422;
     
     [self.view addSubview:self.myView];
-//    [self.myView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.view);
-//        make.top.equalTo(self.view);
-//        make.width.mas_equalTo(CGRectGetWidth(self.view.bounds));
-//        make.height.mas_equalTo(422);
-//    }];
-    
     [self.view addSubview:self.tableView];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.view);
-//        make.top.equalTo(self.myView.mas_bottom);
-//        make.width.mas_equalTo(CGRectGetWidth(self.view.bounds));
-//        make.bottom.equalTo(self.view.mas_bottom);
-//    }];
-    
     [self addObserve];
 }
 
@@ -76,12 +63,16 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"scrollViewDidScroll...");
+    CGFloat originOffsetY = MAX(0, self.scrollBeginDraggingOffset.y);
+    NSLog(@"当前的初始便宜量为%f",originOffsetY);
     CGFloat offsetY = scrollView.contentOffset.y;
+    CGFloat maxOffsetY = scrollView.contentSize.height - scrollView.contentInset.top - scrollView.contentInset.bottom - scrollView.frame.size.height;
     if (offsetY > 0) {
         NSLog(@"向上滑动offsetY为正值,值的大小为%f",offsetY);
     } else {
         NSLog(@"向下滑动offsetY为负值,值的大小为%f",offsetY);
     }
+    offsetY = MIN(offsetY, maxOffsetY) - originOffsetY;
     CGFloat height = self.myView.bounds.size.height;
     CGFloat currentHeight = self.myView.bounds.size.height;
     if (offsetY > 0) {
@@ -121,7 +112,7 @@
     if (height != currentHeight) {
         self.myView.frame = CGRectMake(0, CGRectGetMinY(self.myView.frame), CGRectGetWidth(self.view.frame), height);
         NSLog(@"myView的frame为%f,%f",self.myView.frame.origin.y,height);
-        [scrollView setContentOffset:CGPointMake(0, offsetY)];
+        [scrollView setContentOffset:CGPointMake(0, originOffsetY)];
         NSLog(@"当前的offsetY为%f",offsetY);
         [self.view setNeedsLayout];
     }
@@ -133,10 +124,20 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     NSLog(@"scrollViewWillBeginDragging...");
+    CGPoint p = scrollView.contentOffset;
+    CGFloat maxOffsetY = scrollView.contentSize.height - scrollView.contentInset.bottom - scrollView.contentInset.top - scrollView.frame.size.height;
+    if (p.y >= maxOffsetY) {
+        p.y = maxOffsetY;
+    }
+    self.scrollBeginDraggingOffset = p;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"scrollViewWillEndDragging...");
+    if (decelerate) {
+        return;
+    }
+    self.scrollBeginDraggingOffset = CGPointMake(0, 1);
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
