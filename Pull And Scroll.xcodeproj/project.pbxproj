@@ -10,7 +10,6 @@
 		13981D408DBE5A933AB4EEA7 /* libPods-Pull And Scroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ED303644DEEFE53CFB9133 /* libPods-Pull And Scroll.a */; };
 		B0115F079BA338457720FAB3 /* libPods-Pull And ScrollTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20D959888CBA5A863CE8B1 /* libPods-Pull And ScrollTests.a */; };
 		B6C4AC0125B67A4B004175BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C4AC0025B67A4B004175BF /* AppDelegate.m */; };
-		B6C4AC0725B67A4B004175BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C4AC0625B67A4B004175BF /* ViewController.m */; };
 		B6C4AC0C25B67A4E004175BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4AC0B25B67A4E004175BF /* Assets.xcassets */; };
 		B6C4AC0F25B67A4E004175BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4AC0D25B67A4E004175BF /* LaunchScreen.storyboard */; };
 		B6C4AC1225B67A4E004175BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C4AC1125B67A4E004175BF /* main.m */; };
@@ -47,8 +46,6 @@
 		B6C4ABFC25B67A4B004175BF /* Pull And Scroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pull And Scroll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4ABFF25B67A4B004175BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6C4AC0025B67A4B004175BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B6C4AC0525B67A4B004175BF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B6C4AC0625B67A4B004175BF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B6C4AC0B25B67A4E004175BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6C4AC0E25B67A4E004175BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6C4AC1025B67A4E004175BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 			children = (
 				B6C4ABFF25B67A4B004175BF /* AppDelegate.h */,
 				B6C4AC0025B67A4B004175BF /* AppDelegate.m */,
-				B6C4AC0525B67A4B004175BF /* ViewController.h */,
-				B6C4AC0625B67A4B004175BF /* ViewController.m */,
 				B6C4AC3D25B67AC4004175BF /* PullScrollViewController.h */,
 				B6C4AC3E25B67AC4004175BF /* PullScrollViewController.m */,
 				B6C4AC0B25B67A4E004175BF /* Assets.xcassets */,
@@ -375,7 +370,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C4AC3F25B67AC4004175BF /* PullScrollViewController.m in Sources */,
-				B6C4AC0725B67A4B004175BF /* ViewController.m in Sources */,
 				B6C4AC0125B67A4B004175BF /* AppDelegate.m in Sources */,
 				B6C4AC1225B67A4E004175BF /* main.m in Sources */,
 			);
