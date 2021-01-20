@@ -101,7 +101,7 @@
         [scrollView setContentOffset:CGPointMake(0, originOffsetY)];
         //添加这个主要是为了判断什么时候originOffsetY才会大于0
         if (originOffsetY > 0) {
-            NSLog(@"终于大于0了，哈哈哈哈哈哈哈哈哈哈哈哈哈哈，值为%f",originOffsetY);
+            NSLog(@"originOffset大于0，值为%f",originOffsetY);
         }
         //这样的话在下滑的过程中会直接恢复原状
 //        [scrollView setContentOffset:CGPointMake(0, 0)];
