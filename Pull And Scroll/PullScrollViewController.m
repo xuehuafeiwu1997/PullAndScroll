@@ -91,24 +91,6 @@
     } else if (height > self.maxViewHeight) {
         height = self.maxViewHeight;
     }
-//    if (offsetY > 0) {
-//        offsetY = height - offsetY;
-//    } else {
-//        currentHeight = currentHeight - offsetY;
-//    }
-//    if (currentHeight <= self.minViewHeight) {
-//        currentHeight = self.minViewHeight;
-//        offsetY = offsetY - (height - currentHeight);
-//    } else if (currentHeight >= self.maxViewHeight) {
-//        currentHeight = self.maxViewHeight;
-//        offsetY = offsetY + (currentHeight - height);
-//    } else if (currentHeight >= (self.minViewHeight + self.maxViewHeight) / 2.f) {
-//        currentHeight = self.maxViewHeight;
-//        offsetY = offsetY + (currentHeight - height);
-//    } else if (currentHeight < (self.minViewHeight + self.maxViewHeight) / 2.f) {
-//        currentHeight = self.minViewHeight;
-//        offsetY = offsetY - (height - currentHeight);
-//    }
     if (height != currentHeight) {
         self.myView.frame = CGRectMake(0, CGRectGetMinY(self.myView.frame), CGRectGetWidth(self.view.frame), height);
         NSLog(@"myView的frame为%f,%f",self.myView.frame.origin.y,height);
