@@ -46,16 +46,21 @@
         NSLog(@"--------------");
         NSLog(@"height高度发生了变化%f",self.myView.frame.size.height);
     }];
+    [RACObserve(self, scrollBeginDraggingOffset) subscribeNext:^(id  _Nullable x) {
+        typeof(weakSelf) __strong self = weakSelf;
+        NSLog(@"1111111111111111");
+        NSLog(@"scrollBeginDraggingOffSet发生了变化%f",self.scrollBeginDraggingOffset.y);
+    }];
+    [RACObserve(self.tableView, contentOffset) subscribeNext:^(id  _Nullable x) {
+        typeof(weakSelf) __strong self = weakSelf;
+        NSLog(@"222222222222222");
+        NSLog(@"contentOffsetY发生了变化%f",self.tableView.contentOffset.y);
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 
-    //UITableView一直没有变动，需要在这里作出更改
-
-//    为什么修改myView的frame的值，但是在这里myView的frame一直没有发生变化
-    float height = self.myView.frame.size.height;
-    NSLog(@"myView的高度为%f",height);
     self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.myView.frame), self.view.bounds.size.height, self.view.bounds.size.height - CGRectGetMaxY(self.myView.frame));
 }
 
@@ -94,6 +99,12 @@
         self.myView.frame = CGRectMake(0, CGRectGetMinY(self.myView.frame), CGRectGetWidth(self.view.frame), height);
         NSLog(@"myView的frame为%f,%f",self.myView.frame.origin.y,height);
         [scrollView setContentOffset:CGPointMake(0, originOffsetY)];
+        //添加这个主要是为了判断什么时候originOffsetY才会大于0
+        if (originOffsetY > 0) {
+            NSLog(@"终于大于0了，哈哈哈哈哈哈哈哈哈哈哈哈哈哈，值为%f",originOffsetY);
+        }
+        //这样的话在下滑的过程中会直接恢复原状
+//        [scrollView setContentOffset:CGPointMake(0, 0)];
         NSLog(@"当前的offsetY为%f",offsetY);
         [self.view setNeedsLayout];
     }
@@ -118,7 +129,7 @@
     if (decelerate) {
         return;
     }
-    self.scrollBeginDraggingOffset = CGPointMake(0, 1);
+//    self.scrollBeginDraggingOffset = CGPointMake(0, 1);
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
