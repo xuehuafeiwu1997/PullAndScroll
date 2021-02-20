@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		13981D408DBE5A933AB4EEA7 /* libPods-Pull And Scroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ED303644DEEFE53CFB9133 /* libPods-Pull And Scroll.a */; };
 		B0115F079BA338457720FAB3 /* libPods-Pull And ScrollTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20D959888CBA5A863CE8B1 /* libPods-Pull And ScrollTests.a */; };
+		B6669D7F25B95D2E003D6202 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6669D7E25B95D2E003D6202 /* TestViewController.m */; };
+		B698242425E0AEE40006073D /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B698242325E0AEE40006073D /* Test2ViewController.m */; };
 		B6C4AC0125B67A4B004175BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C4AC0025B67A4B004175BF /* AppDelegate.m */; };
 		B6C4AC0C25B67A4E004175BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C4AC0B25B67A4E004175BF /* Assets.xcassets */; };
 		B6C4AC0F25B67A4E004175BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C4AC0D25B67A4E004175BF /* LaunchScreen.storyboard */; };
@@ -43,6 +45,10 @@
 		76C54B1FC9A51F0EC0CDC2DB /* libPods-Pull And Scroll-Pull And ScrollUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pull And Scroll-Pull And ScrollUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ED303644DEEFE53CFB9133 /* libPods-Pull And Scroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pull And Scroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851F81041C48C483E2E4532F /* Pods-Pull And ScrollTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pull And ScrollTests.debug.xcconfig"; path = "Target Support Files/Pods-Pull And ScrollTests/Pods-Pull And ScrollTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6669D7D25B95D2E003D6202 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		B6669D7E25B95D2E003D6202 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		B698242225E0AEE40006073D /* Test2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		B698242325E0AEE40006073D /* Test2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 		B6C4ABFC25B67A4B004175BF /* Pull And Scroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pull And Scroll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C4ABFF25B67A4B004175BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6C4AC0025B67A4B004175BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +136,10 @@
 				B6C4AC0025B67A4B004175BF /* AppDelegate.m */,
 				B6C4AC3D25B67AC4004175BF /* PullScrollViewController.h */,
 				B6C4AC3E25B67AC4004175BF /* PullScrollViewController.m */,
+				B6669D7D25B95D2E003D6202 /* TestViewController.h */,
+				B6669D7E25B95D2E003D6202 /* TestViewController.m */,
+				B698242225E0AEE40006073D /* Test2ViewController.h */,
+				B698242325E0AEE40006073D /* Test2ViewController.m */,
 				B6C4AC0B25B67A4E004175BF /* Assets.xcassets */,
 				B6C4AC0D25B67A4E004175BF /* LaunchScreen.storyboard */,
 				B6C4AC1025B67A4E004175BF /* Info.plist */,
@@ -371,6 +381,8 @@
 			files = (
 				B6C4AC3F25B67AC4004175BF /* PullScrollViewController.m in Sources */,
 				B6C4AC0125B67A4B004175BF /* AppDelegate.m in Sources */,
+				B6669D7F25B95D2E003D6202 /* TestViewController.m in Sources */,
+				B698242425E0AEE40006073D /* Test2ViewController.m in Sources */,
 				B6C4AC1225B67A4E004175BF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

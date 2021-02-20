@@ -7,6 +7,8 @@
 
 #import "AppDelegate.h"
 #import "PullScrollViewController.h"
+#import "TestViewController.h"
+#import "Test2ViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +25,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     PullScrollViewController *vc = [[PullScrollViewController alloc] init];
+//    TestViewController *vc = [[TestViewController alloc] init];
+//    Test2ViewController *vc = [[Test2ViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     return YES;

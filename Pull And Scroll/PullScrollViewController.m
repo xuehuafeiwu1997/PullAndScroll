@@ -30,8 +30,8 @@
     self.title = @"pull scrollView Demo  使用frame来改变";
     
     //初始化高度
-    self.minViewHeight = 211;
-    self.maxViewHeight = 422;
+    self.minViewHeight = 200;
+    self.maxViewHeight = 400;
     
     [self.view addSubview:self.myView];
     [self.view addSubview:self.tableView];
@@ -68,7 +68,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"scrollViewDidScroll...");
     CGFloat originOffsetY = MAX(0, self.scrollBeginDraggingOffset.y);
-    NSLog(@"当前的初始便宜量为%f",originOffsetY);
+    NSLog(@"当前的初始偏移量为%f",originOffsetY);
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat maxOffsetY = scrollView.contentSize.height - scrollView.contentInset.top - scrollView.contentInset.bottom - scrollView.frame.size.height;
     if (offsetY > 0) {
@@ -151,13 +151,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld个cell",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld个cell",(long)indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"点击了第%ld个cell",indexPath.row);
+    NSLog(@"点击了第%ld个cell",(long)indexPath.row);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -169,7 +169,7 @@
     if (_myView) {
         return _myView;
     }
-    _myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 422)];
+    _myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 400)];
     _myView.backgroundColor = [UIColor yellowColor];
     return _myView;
 }
@@ -178,10 +178,9 @@
     if (_tableView) {
         return _tableView;
     }
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 422, self.view.bounds.size.width, 200) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 400, self.view.bounds.size.width, 200) style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.showsVerticalScrollIndicator = YES;
-//    _tableView.scrollIndicatorInsets = _tableView.contentInset;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
